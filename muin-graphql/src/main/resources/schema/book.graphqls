@@ -1,0 +1,11 @@
+type Book{
+    id: ID!
+    name: String
+    author: String
+    pages: Int
+}
+input BookDto{ # 파라미터로 사용되는 객체는 input으로 설정.
+    name: String
+    author: String
+    pages: Int
+}

@@ -1,0 +1,46 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.muin'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
+    compileOnly 'com.h2database:h2'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // graphql-java-tool
+    implementation("com.graphql-java-kickstart:graphql-java-tools:5.6.0")
+    // graphql-java-kickstart
+    implementation("com.graphql-java-kickstart:graphql-spring-boot-starter:5.10.0")
+
+    // to embed playground
+    runtimeOnly 'com.graphql-java-kickstart:playground-spring-boot-starter:11.0.0'
+    // to embed Altair tool
+    runtimeOnly 'com.graphql-java-kickstart:altair-spring-boot-starter:11.0.0'
+    // to embed GraphiQL tool
+    runtimeOnly 'com.graphql-java-kickstart:graphiql-spring-boot-starter:11.0.0'
+    // to embed Voyager tool
+    runtimeOnly 'com.graphql-java-kickstart:voyager-spring-boot-starter:11.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}

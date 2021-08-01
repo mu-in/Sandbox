@@ -1,0 +1,6 @@
+# mutation에 해당하는 스키마입니다.
+type Mutation{
+    saveBook(bookDto: BookDto) : String!
+    updateBook(bookDto: BookDto, id:Int) : String!
+    deleteBook(id: Int): String!
+}

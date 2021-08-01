@@ -1,0 +1,25 @@
+graphql:
+  servlet:
+    enabled: true
+    mapping: /graphql
+    corsEnabled: false
+    cors:
+      allowed-origins: http://localhost:8080
+      allowed-methods: GET, HEAD, POST, PUT, DELETE, PATCH
+    exception-handlers-enabled: true
+    context-setting: PER_REQUEST_WITH_INSTRUMENTATION
+    async-mode-enabled: true
+  tools:
+    schema-location-pattern: "**/*.graphqls"
+    introspection-enabled: true
+  playground:
+    mapping: /playground
+    endpoint: /graphql
+    enabled: true
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=mysql;
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
